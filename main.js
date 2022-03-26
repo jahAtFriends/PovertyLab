@@ -1,4 +1,4 @@
-//Display Constants
+//Display Variables
 let dispStartIndex = 0;
 let recordsPerPage = 10;
 let allTableRecords = "";
