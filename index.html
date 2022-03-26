@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Depressing Table</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <div id="main-title">
+      <h1> Poverty in American School Districts</h1>
+      <p> <em> Brought to you by the US Census Bureau </em></p>
+    </div>
+  </header>
+  <!--form id="search" onSubmit=""-->
+    <label for="search-column">In Column:</label>
+    <select name="column" id="search-column">
+      <option value="state">State</option>
+      <option value="fips">State FIPS Code</option>
+      <option value="distId">District ID</option>
+      <option value="name">Name</option>
+      <option value="pop">Total Population</option>
+      <option value="schlPop">School-aged Population</option>
+      <option value="povPop">School-aged children in Poverty</option>
+      <option value="povRate">Poverty Rate</option>
+    </select>
+    <label for="searchfor">Search for </label>
+    <input id="searchfor" type="text" />
+    <select name="scope" id="search-scope">
+      <option value="0">Matches Exactly</option>
+      <option value="1">Contains</option>
+      <option value="2">Does Not Contain</option>
+      <option value="3">Greater Than</option>
+      <option value="4">Less Than</option>
+    </select>
+    <button id="submit-search" onClick="searchDisplay()">Search</button>
+    <label for = "disp-size">Records to show:</label>
+    <select name="Records-per-page" id = "disp-size" onchange="javascript:updateTableSize()">
+      <option value="10" selected>10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+    </select>
+  <!--/form-->
+  <table>
+    <thead>
+      <tr>
+        <th><a href="javascript:sort(0)">State</a></th>
+        <th><a href="javascript:sort(1)">State FIPS Code</a></th>
+        <th><a href="javascript:sort(2)">District ID</a></th>
+        <th><a href="javascript:sort(3)">Name</a></th>
+        <th><a href="javascript:sort(4)">Total Population</a></th>
+        <th><a href="javascript:sort(5)">School-aged population (5-17)</a></th>
+        <th><a href="javascript:sort(6)">School-aged children in poverty</a></th>
+        <th><a href="javascript:sort(7)">Poverty Rate</a></th>
+      </tr>
+    </thead>
+    <tbody id="data-table-body">
+      <tr>
+        <td>AL</td>
+        <td>01</td>
+        <td>00190</td>
+        <td>Alabaster City School District</td>
+        <td>35,268</td>
+        <td>6,797</td>
+        <td>669</td>
+        <td>9.84%</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div id="advance-table">
+    <button id="prev-table-page" onClick="prevPage()">&#8592; prev</button>
+    <button id="next-table-page" onClick="nextPage()">next &#8594;</button>
+  </div>
+  
+  <div> <p id="xhtml-status"><!--Insert Status of xhttp request--></p> </div>
+  
+</body>
+  <script src="./main.js"></script>
+</html>
